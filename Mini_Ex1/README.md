@@ -12,3 +12,4 @@ How your coding process is differ or similar to reading and writing text? (You m
 What might be the potential and possibility of coding practice?
 
 ### FFT_Drawing.js
+![alt text](https://github.com/Pacour/Aesthetic_Programming_2018/blob/master/Mini_Ex1/Screen-Shot-2018-02-09-at-17.30.32.gif)
