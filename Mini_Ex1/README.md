@@ -1,9 +1,6 @@
 # Mini_Ex1:
 **Objective:**
-- To learn the basic setup, including independent study of code syntax, uploading files on github, creating a readme file, etc.
-- To get familiar with the building and feedback process of weekly mini exercises
-- To reflect upon the process of coding
-
+The Objective with this mini_ex1 was to learn the basic setup for creative coding, including independent study of code syntax, uploading files to github, etc. In order to familiarize with the feedback process of the upcoming weekly mini exercises, and being able to reflect on the process of coding.
 
 A screenshot about your program
 A URL link to your program and run on a browser, see: https://rawgit.com/
@@ -12,6 +9,7 @@ How your coding process is differ or similar to reading and writing text? (You m
 What might be the potential and possibility of coding practice?
 
 ### FFT_Drawing.js
+My code is concerned with the relation between 3D-Cones and the FFT-values coming from the music thats playing in the background. The ideer is to analyze the audio frequencies by utilizing the FFT.analyze(). This element computes the amplitude values and produces an array of the corresponding frequencies/ pitches, from the lowest to the highest that humans are able to hear.  
 ![alt text](https://github.com/Pacour/Aesthetic_Programming_2018/blob/master/Mini_Ex1/Screen-Shot-2018-02-09-at-17.30.32.gif)
 Click [Here](https://cdn.rawgit.com/Pacour/f1c66d53ae297a19a74337c99abedbf6/raw/cd56d103030dd12663779da096d922459a47663d/sketch.js) is the to run my FFT_Drawing.js program.
 
