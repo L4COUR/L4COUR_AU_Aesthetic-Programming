@@ -16,4 +16,6 @@ My code is concerned with the relation between 3D-Cones and the FFT-values comin
 alt="Youtube video"/></a>
 </br>
 </br>
-(https://cdn.rawgit.com/Pacour/f1c66d53ae297a19a74337c99abedbf6/raw/cd56d103030dd12663779da096d922459a47663d/sketch.js) is the to run my FFT_Drawing.js program.
+Press the [RawGit](https://cdn.rawgit.com/Pacour/f1c66d53ae297a19a74337c99abedbf6/raw/cd56d103030dd12663779da096d922459a47663d/sketch.js) to run my code.
+</br>
+I have had some trouble figuring out how RawGit works, so in the event that it doesnt work, i suggest clicking the .gif, which is a Youtube link.
