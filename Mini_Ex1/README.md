@@ -19,3 +19,51 @@ alt="Youtube video"/></a>
 Press the [RawGit](https://cdn.rawgit.com/Pacour/f1c66d53ae297a19a74337c99abedbf6/raw/cd56d103030dd12663779da096d922459a47663d/sketch.js) to run my code.
 </br>
 I have had some trouble figuring out how RawGit works, so in the event that it doesnt work, i suggest clicking the .gif, which is a Youtube link.
+</br>
+</br>
+**The Code:**
+```javascript
+var song, fft;
+function setup() {
+  createCanvas(1000,700, WEBGL);
+  background(0)
+  song = loadSound("La Cour - IAX_999992.mp3", loaded);
+  fft = new p5.FFT(0.0001,16);
+}
+
+function loaded(){
+    song.play();
+    song.setVolume(0.4);
+}
+
+function draw() {
+  //spectrum analyzer code
+    var spectrum = fft.analyze();
+      for (var i = 0; i< spectrum.length; i++){
+        var x = map(i, 0, spectrum.lenth, 0, width);
+        var h = -height + map(spectrum[i], 0, 255, height, 0);
+    }
+      //console.log used to see the array values,
+      // from the soundfile "La Cour - IAX_999992"
+        //console.log(spectrum.lenth);
+
+  //3D-Shape: Cone, specified
+    push();
+      translate((x*rotateZ(random(frameCount * -0.01,frameCount * -0.0002)),
+                (x, height, width / spectrum.length, h ) ),0);
+      rotateY(frameCount * -0.01);
+      rotateZ(frameCount * -0.01);
+      //noStroke();
+        var c = color(random(10,200), random(10,200), random(10, 200), 50);
+        fill(c);
+      cone(100,(x, height, width / spectrum.length, h ),
+                2+(x, height, width / spectrum.length, h ),2);
+        var value = alpha(c);
+        fill(value)
+        strokeWeight(0.5);
+    pop();
+}
+```
+</br>
+### My first independent coding process using P5.js
+This being my first coding experience 
