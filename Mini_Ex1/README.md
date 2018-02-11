@@ -64,6 +64,5 @@ function draw() {
     pop();
 }
 ```
-</br>
-### My first independent coding process using P5.js
-This being my first coding experience 
+### Reflecting on my first independent coding process using P5.js
+Writing code using the P5.js library has been quite a nice and intuitive expreience. I have had some expreience with other types of coding-envoirments for visual programming before. I have however not had this pleasant experience of code, as being this exciting expressive tool. 
