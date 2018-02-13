@@ -1,6 +1,6 @@
 var song, fft;
 function setup() {
-  createCanvas(1000,700, WEBGL);
+  createCanvas(1920,1080, WEBGL);
   background(0)
   song = loadSound("La Cour - IAX_999992.mp3", loaded);
   fft = new p5.FFT(0.0001,16);
