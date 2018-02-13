@@ -2,12 +2,6 @@
 **Objective:**
 The Objective with this mini_ex1 was to learn the basic setup for creative coding, including independent study of code syntax, uploading files to github, etc. In order to familiarize with the feedback process of the upcoming weekly mini exercises, and being able to reflect on the process of coding.
 
-A screenshot about your program
-A URL link to your program and run on a browser, see: https://rawgit.com/
-Describe your first independent coding process (in relation to thinking, reading, copying, modifying, writing, uploading, sharing, commenting code)
-How your coding process is differ or similar to reading and writing text? (You may also reflect upon Annette Vee's text on coding literacy)
-What might be the potential and possibility of coding practice?
-</br>
 ### FFT_Drawing.js
 My code is concerned with the relation between 3D-Cones and the FFT-values coming from the music thats playing in the background. The ideer is to analyze the audio frequencies by utilizing the FFT.analyze(). This element computes the amplitude values and produces an array of the corresponding frequencies/ pitches, from the lowest to the highest that humans are able to hear. I am then using the FFT-values to manipulate the position, rotation and dimention of the Cones, thereby drawing patterns with the 3D objects in correlation to the audio playing. Further tweaking of different parameters such as the rotation framCounts, or just simply changing the audiofile, may result in a totally different pattern.
 </br>
@@ -16,7 +10,7 @@ My code is concerned with the relation between 3D-Cones and the FFT-values comin
 alt="Youtube video"/></a>
 </br>
 </br>
-Press the [RawGit](https://cdn.rawgit.com/Pacour/f1c66d53ae297a19a74337c99abedbf6/raw/cd56d103030dd12663779da096d922459a47663d/sketch.js) to run my code.
+Press the [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/f19a626f/Mini_Ex1/empty-example/index.html) to run my code.
 </br>
 I have had some trouble figuring out how RawGit works, so in the event that it doesnt work, i suggest clicking the .gif, which is a Youtube link.
 </br>
