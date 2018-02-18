@@ -1,7 +1,7 @@
 # Mini_Ex2:
 **Objective:**
 To comprehend the the notion of fun through eksperimenting
-with computational drawing possibilities, and Goriunova's text.
+with computational drawing possibilities, and Goriunova's text concerning the notion of fun.
 
 ### FUN.js
 This might sound weird but i found that this mini_ex2 was actually quite hard to do, 
