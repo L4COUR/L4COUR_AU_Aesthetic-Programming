@@ -61,6 +61,7 @@ function mousePressed(){
 }
 ```
 ### What is fun in the context of programming?
-
+- (Goriunova's text: Goriunova, Oga. Fun and Software: Exploring Pleasure, Paradox and Pain in Computing. Bloomsbury Academic, 2014, pp.1-19)
+- (What is fun? To what extend your program addresses Goriunova's noton of fun? Is it fun in relation to geekiness, or humour, or paradox, or other modes of thoughts? (This question requires your articulation of your work beyond just describing how it works technically))
 
   
