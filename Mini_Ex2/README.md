@@ -20,7 +20,7 @@ Press the [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/9af8
 using only simple shapes and functions from the p5 library
 */
 var s = 'F-undamentally U-ncontrollable N-ose';
-var song
+var song;
 
 function setup() {
   createCanvas(600, 600);
