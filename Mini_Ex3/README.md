@@ -1,6 +1,6 @@
 # Mini_Ex3:
 **Objective:**
-The Objective with this mini_ex1 was to learn the basic setup for creative coding, including independent study of code syntax, uploading files to github, etc. In order to familiarize with the feedback process of the upcoming weekly mini exercises, and being able to reflect on the process of coding.
+To reflect upon time and temporality in digital culture via the famous visual throbber icon, and to experiment with various computational effects of animation and transformation.
 
 ### ThrobberPhase.js
 </br>
