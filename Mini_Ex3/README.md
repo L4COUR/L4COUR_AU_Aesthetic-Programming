@@ -20,7 +20,7 @@ I have in my mini_ex3 repurposed the concept of the trobber as something that re
 </br>
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex3/PhasingGIF.gif "Logo Title Text 1")
 </br>
-The audio-signal must be split in two for the phasing to happen. then one of the split signals are altered in speed and pitch. when the two audio-signals are played simultaniously what then creates the artifacts in the sound is a mixture of sound waves cancelling each other out and the offset in phase in relation to each other.  
+The audio-signal must be split in two for the phasing to happen. then one of the split signals are altered in speed and pitch. when the two audio-signals are played simultaniously what then creates the artifacts in the sound is a mixture of sound waves cancelling each other out, which occours whenever two waves with the same mirrored positive and negative amplitude happens at the same time. then there is also the offset in phase of the waves in relation to each other which resonate with each other essentialy creating a new waveform. all these things combined is what we perceive as the phasing effect.  
 
 **The Code:**
 
