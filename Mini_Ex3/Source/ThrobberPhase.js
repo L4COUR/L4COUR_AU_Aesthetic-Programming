@@ -4,20 +4,21 @@ var reverb;
 var filter;
 var vol = 1;
 
-function setup(){
-  //createcanvas
-  createCanvas(800,400);
-  background(10);
-  //loading the same sound using to different variables
+function preload() {
+  soundFormats('mp3');
   song = loadSound("89_59_metro.mp3", loaded);
   soong = loadSound("89_59_metro.mp3", loaded);
   reverb = new p5.Reverb();
   lowpass = new p5.BandPass();
-
-  frameRate(60);
 }
-function loaded(){
-reverb.process(song, 3, 2);
+
+function setup(){
+  //createcanvas
+  createCanvas(800,400);
+  background(10);
+  frameRate(60);
+  //loading the same sound using to different variables
+  reverb.process(song, 3, 2);
 reverb.process(soong, 3, 2);
 
   song.loop();
@@ -29,7 +30,7 @@ reverb.process(soong, 3, 2);
   soong.setVolume(vol);
   soong.pan(1);
   soong.rate(0.985);
-}
+
 var leftBuffer;
 var rightBuffer;
 
