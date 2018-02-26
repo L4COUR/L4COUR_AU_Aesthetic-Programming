@@ -8,6 +8,7 @@ The Objective with this mini_ex1 was to learn the basic setup for creative codin
 Press the [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/45fd10a9/Mini_Ex3/Source/index.html) to run my code.
 </br>
 **The Code:**
+
 ```javascript
 var left;
 var right;
@@ -24,11 +25,10 @@ function preload() {
 }
 
 function setup(){
-  //Canvas settings and Framerate
+    //Canvas settings and Framerate
     createCanvas(800,400);
     background(10);
-    frameRate(60);
-  //Initiation of the preloaded clips
+    frameRate(60);  //Initiation of the preloaded clips
     reverb.process(left, 3, 2);
       reverb.process(right, 3, 2);
 
