@@ -9,14 +9,6 @@ Press the [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/45fd
 </br>
 **The Code:**
 ```javascript
-/* This code requires the use of headphones in order to facilitate 
-the full experience of complex phasing. The idea is that the two throbbers each corresponds
-to the timing of the loops in the Left and Right ear cup. one of the loops are slightly faster 
-in terms of completing one full revolution, thus inducing the complex phasing phenomenon.
-the Code is also heavily inspired from Steve Reichs early explorations into phasing recordings of 
-bits of spoken phrases repeatedly played over and over again, with the signal split and panned directly
-to the left and right channels.
-*/
 var left;
 var right;
 var reverb;
