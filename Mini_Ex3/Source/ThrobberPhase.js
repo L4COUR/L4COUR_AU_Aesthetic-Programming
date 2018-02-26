@@ -6,8 +6,8 @@ var vol = 1;
 
 function preload() {
   soundFormats('mp3');
-  song = loadSound("89_59_metro.mp3", loaded);
-  soong = loadSound("89_59_metro.mp3", loaded);
+  song = loadSound("89_59_metro.mp3");
+  soong = loadSound("89_59_metro.mp3");
   reverb = new p5.Reverb();
   lowpass = new p5.BandPass();
 }
@@ -30,9 +30,7 @@ reverb.process(soong, 3, 2);
   soong.setVolume(vol);
   soong.pan(1);
   soong.rate(0.985);
-
-var leftBuffer;
-var rightBuffer;
+}
 
 function draw(){
   //background(10);
