@@ -33,7 +33,7 @@ function setup(){
       right.loop();
       right.setVolume(vol);
       right.pan(1);
-      right.rate(0.995 );
+      right.rate(0.800 );
 }
 
 function draw(){
