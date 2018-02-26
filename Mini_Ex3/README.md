@@ -3,6 +3,7 @@
 To reflect upon time and temporality in digital culture via the famous visual throbber icon, and to experiment with various computational effects of animation and transformation.
 
 ### ThrobberPhase.js
+The whole concept sourrounding this Mini_Ex3 is the perception of time in coding, and how it might be used in coalation with animation and transformation in an experimental envoirment. the more pragmatic case of this assignment was to code somthing corresponding with the idea of a throbber.  
 </br>
 </br>
 Press the [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/45fd10a9/Mini_Ex3/Source/index.html) to run my code.
