@@ -30,8 +30,6 @@ Since I have explained what phasing is and how i used it upon the audio-clips in
 ```javascript
 var left;
 var right;
-var reverb;
-var filter;
 var vol = 0.8;
 
 function preload() {
@@ -72,12 +70,12 @@ function draw(){
   ellipse(width/1.34,height/2,16,16)
 
 }
-var r = 0;
-var t = 0;
+var r = 0; //left rotation value
+var t = 0; //right rotation value
 
 function drawThrobber1(num) { //left
   push();
-  r = (left.currentTime()*50);  // using currentTime i am able to use the exact timing of the buffered sound
+  r = (left.currentTime()*50);  // using currentTime function with left signal
   translate(width/1.5, height/2);
   rotate(radians(r));
   noStroke();
@@ -88,7 +86,7 @@ function drawThrobber1(num) { //left
 
 function drawThrobber2(num) { //right
   push();
-  t =right.currentTime()*50;
+  t =right.currentTime()*50; // using currentTime function with right signal
   translate(width/4, height/2);
   rotate(radians(t));
   noStroke();
@@ -96,5 +94,4 @@ function drawThrobber2(num) { //right
   ellipse(64,0,16,16);
   pop();
 }
-
 ```
