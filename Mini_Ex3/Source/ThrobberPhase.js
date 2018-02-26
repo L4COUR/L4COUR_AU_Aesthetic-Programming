@@ -42,7 +42,7 @@ function draw(){
   fill(10,1);
   rect(0, 0, width, height);
   drawThrobber1(32); //left side.
-  drawThrobber2(32.985); // right side slightly offset by 0.985.
+  drawThrobber2(32); // right side slightly offset by 0.985.
 
   stroke(255)
   strokeWeight(0.5)
