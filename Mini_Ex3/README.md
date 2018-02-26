@@ -5,7 +5,7 @@ The Objective with this mini_ex1 was to learn the basic setup for creative codin
 ### ThrobberPhase.js
 </br>
 </br>
-Press the [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/1b544dc6/Mini_Ex3/Source/index.html) to run my code.
+Press the [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/18d3af56/Mini_Ex3/Source/index.html) to run my code.
 </br>
 **The Code:**
 ```javascript
