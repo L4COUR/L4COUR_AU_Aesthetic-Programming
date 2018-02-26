@@ -9,7 +9,7 @@ The whole concept sourrounding this Mini_Ex3 is the perception of time in coding
 </br>
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex3/Screen%20Shot%202018-02-26%20Use%20Headphones.png "Logo Title Text 1")
 </br>
-Before pressing [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/45fd10a9/Mini_Ex3/Source/index.html) I strongly advice to use a set of headphones to get a better experience of the panned audio-signals.
+Before pressing [RawGit]() I strongly advice to use a set of headphones to get a better experience of the panned audio-signals.
 </br>
 **The Temporality of Phasing:**
 
