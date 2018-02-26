@@ -11,9 +11,10 @@ The whole concept sourrounding this Mini_Ex3 is the perception of time in coding
 </br>
 Before pressing [RawGit](https://cdn.rawgit.com/L4COUR/Aesthetic_Programming_2018/f78d58f1/Mini_Ex3/Source/index.html) I strongly advice to use a set of headphones to get a better experience of the panned audio-signals.
 </br>
+
 **The Temporality of Phasing:**
 
-I have in my mini_ex3 repurposed the concept of the trobber as something that repressents a loading time, to instead be sort of a progress bar which gives the user feedback on the current state of cycle of the looping audio-clip. By changing the means of this throbber I opened up for a new form of experimentation with temporalities evolving about the complex idea of phasing. 
+I have in my mini_ex3 repurposed the concept of the trobber as something that repressents a loading time, to instead be sort of a progress bar which gives the user feedback on the current state of cycle of the looping audio-clip. By changing the means of this throbber I opened up for a new form of experimentation with temporalities evolving around Steve Reich's phasing technic which he famously used in his piece from 1966 called ["Come Out"](https://www.youtube.com/watch?v=ouYiTiiY3vg).   
 
 **The Code:**
 
