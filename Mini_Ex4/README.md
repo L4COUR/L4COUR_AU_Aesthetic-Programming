@@ -33,7 +33,7 @@ The audio-signal must be split in two for the phasing to happen. then one of the
 
 Since I have explained what phasing is and how i used it upon the audio-clips in the code. Will i now move on to the visual side of the code, which proved to be quite a challenge figuring out how to do. So in my earlier versions of the code I didnt know how I was supposed to make the throbbers sync with the audio, so I did a lot of unecessary work where I used a BPM tap-counter and then tapped in the timing of one revolution of the throbber, however this was quite a stupid and unthoughtful way of doing it. What would often happen was that the throbber would get totally out of sync with the audio playing. it was only a few days before hand in that i found i useful function in the p5.sound library ```currentTime()```which enabled me to use the current time in the audio-clips as a variable, which solved my timing issues. I then combined the ```currentTime()``` with the ```rotate()```which synchronized the time of the audio-clips with the rotation of the throbbers.
 
-**The Code:**
+**p5.js Code:**
 
 ```javascript
 /* This mini_ex4 evolves around data capturing in any shape or form
@@ -173,4 +173,17 @@ function start(){
     println('The serial port closed.');
   }
 
+```
+**Arduino Code:**
+```
+int sensorPin = A0; // select the input pin for LDR 
+int sensorValue = 0; // variable to store the value coming from the sensor 
+void setup() { 
+Serial.begin(19200); //sets serial port for communication 
+} 
+void loop() { 
+sensorValue = analogRead(sensorPin); // read the value from the sensor 
+Serial.println(sensorValue); //prints the values coming from the sensor on the screen 
+delay(10); 
+} 
 ```
