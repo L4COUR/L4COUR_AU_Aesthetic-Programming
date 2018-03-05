@@ -11,8 +11,6 @@ The modern-day human becomes the User, a person that uses software, networks, an
 
 **The Concept of Communicating between Hardware and Software:**
 
-(text)
-
 </br>
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex4/La-Cour---Obfuscated_FB_Non-human.gif "Logo Title Text 1")
 </br>
