@@ -4,7 +4,11 @@ To Critically relfect upon the issue of data capturing in digital culture,
 and to furthermore experiment with variuos forms of data capturing inputs, 
 such as: audio input, mouse movements, keyboard activity, facial recognition through web-cam, etc.
 
-### Serial_Capture.js
+### User.js
+**User.js artwork discription:**
+
+The modern-day human becomes the User, a person that uses software, networks, and computers. The User often has a user account and is able to communicate with the system via the username. This transformation from human to User marks a commodification of the individual of the so-called free world. 
+
 **The Concept of Communicating between Hardware and Software:**
 
 The whole concept sourrounding this Mini_Ex3 is the perception of time in coding, and how it might be used in coalation with animation and transformation in an experimental envoirment. The more pragmatic view of this assignment is about coding somthing corresponding to the idea of a throbber, which is this very iconic visual representation of waiting. An example of a throbber would be the round loading icon that appears if a Youtube video is buffering more content. In comparison to something like a file-transffering where the user often will recieve some form of feedback through the convinience of a progress-bar showing how many percent has been transfered giving the user a set time, a throbber doesnt have this determanistic concept of time. A throbber is instead this placeholder for missing content, and can sometimes come off as this unlimited and unknown time of waiting. the main purpose of this buffering icon is to show the user that something is happening, and attempts to have the user wait until the content has loaded. This is according to Myers, stated in the text "Fidget spinners - How buffer icons have shaped our sense of time", a better alternative than "a progress bar that had been moving smoothly only to stall at 99 percent (...)" (J. Farman, 2017).
