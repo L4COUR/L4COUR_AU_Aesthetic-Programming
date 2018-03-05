@@ -25,8 +25,21 @@ I have in my mini_ex3 repurposed the concept of the trobber as something that re
 
 **The Auditory Effect of Phasing:**
 </br>
-![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex3/PhasingGIF.gif "Logo Title Text 1")
+![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex4/Arduino_photo_res_circuit.png "Logo Title Text 1")
 </br>
+**Arduino Code:**
+```
+int sensorPin = A0; // select the input pin for LDR 
+int sensorValue = 0; // variable to store the value coming from the sensor 
+void setup() { 
+Serial.begin(19200); //sets serial port for communication 
+} 
+void loop() { 
+sensorValue = analogRead(sensorPin); // read the value from the sensor 
+Serial.println(sensorValue); //prints the values coming from the sensor on the screen 
+delay(10); 
+} 
+```
 The audio-signal must be split in two for the phasing to happen. then one of the split signals are altered in speed and pitch. when the two audio-signals are played simultaniously what then creates the artifacts in the sound is a mixture of sound waves cancelling each other out, which occours whenever two waves with the same mirrored positive and negative amplitude happens at the same time. then there is also the offset in phase of the waves in relation to each other which resonate with each other essentialy creating a new waveform. all these things combined is what we perceive as the phasing effect.  
 
 **Coded Visual Representation of the Phasing Effect:**
@@ -173,17 +186,4 @@ function start(){
     println('The serial port closed.');
   }
 
-```
-**Arduino Code:**
-```
-int sensorPin = A0; // select the input pin for LDR 
-int sensorValue = 0; // variable to store the value coming from the sensor 
-void setup() { 
-Serial.begin(19200); //sets serial port for communication 
-} 
-void loop() { 
-sensorValue = analogRead(sensorPin); // read the value from the sensor 
-Serial.println(sensorValue); //prints the values coming from the sensor on the screen 
-delay(10); 
-} 
 ```
