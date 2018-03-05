@@ -8,8 +8,6 @@ such as: audio input, mouse movements, keyboard activity, facial recognition thr
 **User.js Artwork discription:**
 
 The modern-day human becomes the User, a person that uses software, networks, and computers. The User often has a user account and is able to communicate with the system via a username. This transformation from human to User marks the commodification of the individual and has as a result ended the concept of personal data privacy. Living in a world dictated by capitalistic values which manifests itself by manipulating common people into thoughtless over-consumerism by targeting them with adds derived from their behavioral data. Surveillance systems which are being funded by corrupted politicians blinded by threats of terror, are unknowingly supporting an even greater threat to society. The mass surveillance society in which everything that people do is monitored and analyzed and transferred to large databases. Social networking sites like facebook, weChat, vk, and many more are a part of this global monetization which is making the web into a hyper modern panopticon prison in which we can't tell wether we are being watched or not. We have through all of this datamining created a mirrored society on the web, in which we upload our subject individualism, thus the embodiment of the non-human lifeform inside the binary wilderness of the web, manifesting itself through our use of services on the web, it slowly materializes through the data we constantly feed it.
-
-**The Concept of Communicating between Hardware and Software:**
 </br>
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex4/La-Cour---Obfuscated_FB_Non-human.gif "Obfuscated_FB_Non-human.js")
 </br>
