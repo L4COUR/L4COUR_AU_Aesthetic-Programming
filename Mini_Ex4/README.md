@@ -183,6 +183,9 @@ function start(){
 
 ```
 **Sources:**
+- https://github.com/vanevery/p5.serialport
+- https://github.com/sarahgp/p5bots
+- https://github.com/auduno/clmtrackr
 - https://itp.nyu.edu/physcomp/labs/labs-serial-communication/lab-serial-input-to-the-p5-js-ide/
 - https://itp.nyu.edu/physcomp/labs/labs-serial-communication/lab-serial-output-from-p5-js/
 - https://creative-coding.decontextualize.com/video/
