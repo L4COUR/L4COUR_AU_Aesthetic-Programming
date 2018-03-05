@@ -5,7 +5,7 @@ and to furthermore experiment with variuos forms of data capturing inputs,
 such as: audio input, mouse movements, keyboard activity, facial recognition through web-cam, etc.
 
 ### Obfuscated_FB_Non-human.js
-**User.js Artwork discription:**
+**Artwork Discription:**
 
 The modern-day human becomes the User, a person that uses software, networks, and computers. The User often has a user account and is able to communicate with the system via a username. This transformation from human to User marks the commodification of the individual and has as a result ended the concept of personal data privacy. Living in a world dictated by capitalistic values which manifests itself by manipulating common people into thoughtless over-consumerism by targeting them with adds derived from their behavioral data. Surveillance systems which are being funded by corrupted politicians blinded by threats of terror, are unknowingly supporting an even greater threat to society. The mass surveillance society in which everything that people do is monitored and analyzed and transferred to large databases. Social networking sites like facebook, weChat, vk, and many more are a part of this global monetization which is making the web into a hyper modern panopticon prison in which we can't tell wether we are being watched or not. We have through all of this datamining created a mirrored society on the web, in which we upload our subject individualism, thus the embodiment of the non-human lifeform inside the binary wilderness of the web, manifesting itself through our use of services on the web, it slowly materializes through the data we constantly feed it.
 </br>
@@ -37,7 +37,7 @@ delay(10);
 ```
 The audio-signal must be split in two for the phasing to happen. then one of the split signals are altered in speed and pitch. when the two audio-signals are played simultaniously what then creates the artifacts in the sound is a mixture of sound waves cancelling each other out, which occours whenever two waves with the same mirrored positive and negative amplitude happens at the same time. then there is also the offset in phase of the waves in relation to each other which resonate with each other essentialy creating a new waveform. all these things combined is what we perceive as the phasing effect.  
 
-**Coded Visual Representation of the Phasing Effect:**
+**Integration of HTML & CSS code with the p5.dom elements:**
 
 Since I have explained what phasing is and how i used it upon the audio-clips in the code. Will i now move on to the visual side of the code, which proved to be quite a challenge figuring out how to do. So in my earlier versions of the code I didnt know how I was supposed to make the throbbers sync with the audio, so I did a lot of unecessary work where I used a BPM tap-counter and then tapped in the timing of one revolution of the throbber, however this was quite a stupid and unthoughtful way of doing it. What would often happen was that the throbber would get totally out of sync with the audio playing. it was only a few days before hand in that i found i useful function in the p5.sound library ```currentTime()```which enabled me to use the current time in the audio-clips as a variable, which solved my timing issues. I then combined the ```currentTime()``` with the ```rotate()```which synchronized the time of the audio-clips with the rotation of the throbbers.
 
