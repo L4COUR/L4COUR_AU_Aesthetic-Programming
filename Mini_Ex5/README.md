@@ -14,7 +14,7 @@ Before pressing [RawGit](https://cdn.rawgit.com/L4COUR/Aesthetic_Programming_201
 
 **Object Orientation in digital Culture:**
 
-I think that Object Oriented Programming (OOP) is a very powerful way of programming, in the sense that it makes it a lot easier to keep oversieht of all the different objects that are used in the code, and also manipulating them simultaniously through variables and so forth. however I also see it very much is just a container, a way to keep your code organized, and while this is important, I also think that it is a part of a culture of programming thats more concerned with the notion of JIT and efficiancy which is exactly what p5.js is oposing.  
+I think that Object Oriented Programming (OOP) is a very powerful way of programming, in the sense that it makes it a lot easier to keep oversieht of all the different objects that are used in the code, and also manipulating them simultaniously through variables and so forth. however I also see it very much is just a container, a way to keep your code organized, and while this is important, I also think that it is a part of a culture of programming thats more concerned with the notion of JIT and efficiancy which is exactly what p5.js is oposing. I find that the OOP way of programming is more difficult and a little less intuitive, but I think I will get the hang of it eventually. It is afterall a pretty big step from a classical paradigm to the object-oriented paradigm, changing a very fundamental way in how to code.   
 
 **The Code:**
 
