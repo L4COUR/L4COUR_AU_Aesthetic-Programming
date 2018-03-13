@@ -1,6 +1,6 @@
 # Mini_Ex5:
 **Objective:**
-To reflect upon time and temporality in digital culture via the famous visual throbber icon, and to experiment with various computational effects of animation and transformation.
+To implement a class-based object oriented sketch via abstracting and designing objects' properties and behaviors, and to furthermore reflect upon the object orientation in the domain of digital culture
 
 ### Techno_obj.js
 **The Techno_obj concept:**
