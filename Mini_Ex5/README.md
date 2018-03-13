@@ -12,15 +12,9 @@ I have with this mini_ex5 gone with a much simpler idea compared to my previous 
 Before pressing [RawGit](https://cdn.rawgit.com/L4COUR/Aesthetic_Programming_2018/f390cc2b/Mini_Ex5/Source/index.html) I would once again strongly advice to use a set of headphones for a better experience of the panned audio-signals.
 </br>
 
-**The Auditory Temporality of Phasing in the code:**
+**Object Orientation in digital Culture:**
 
 I have in my mini_ex3 repurposed the concept of the trobber as something that repressents a loading time, to instead be sort of a progress bar which gives the user feedback on the current state of cycle of the looping audio-clip. By changing the means of this throbber I opened up for a new form of experimentation with temporalities evolving around Steve Reich's phasing technic which he famously used in his piece from 1966 called ["Come Out"](https://www.youtube.com/watch?v=ouYiTiiY3vg). I have linked to a video in which to choreographers performs a composed dance where they get out of phase visually in coalation to the piece also phasing. This was what inspired me to use the throbbers as the to choreaographers and making the phasing visual as well as audiable. in comparison with my Mini_ex1 i chose to this time make use of the ```preload()```in order to have the audio and visuals start at the exact same time which was crucial in order to make this work. In Reich's piece he uses two tape-recorders from which he plays the exact same recording, in order to emulate that i used to ```loadSound()``` twice with the same audio-clip defining them as ```left```and ```right```. In order to give the same effect as "Come Out" i then broadened the stereofield by using the ```left.pan(-1)``` and ```right.pan(1)```, thus creating the same audatory space which makes the phasing more clear to the listner. in order to make the two audio-clips phase with each other, I used the ```rate()```which according to the description sets the playback rate of the audio-clip. which will result in a change in speed and pitch of the file. The playback rate of a audio-clip is normal at 1.0, so all i had to do in order to make the two audio-clips phase with each other was to let the ```left.rate(1)```and the ```right.rate(0.995)```, thus slightly inducing a phasing between the to waves. I feel like I maybe need to explain a little bit about what the physical properties of phasing actually is to those of you who might not be deep into audio-design.
-
-**The Auditory Effect of Phasing:**
-</br>
-![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex3/PhasingGIF.gif "Logo Title Text 1")
-</br>
-The audio-signal must be split in two for the phasing to happen. then one of the split signals are altered in speed and pitch. when the two audio-signals are played simultaniously what then creates the artifacts in the sound is a mixture of sound waves cancelling each other out, which occours whenever two waves with the same mirrored positive and negative amplitude happens at the same time. then there is also the offset in phase of the waves in relation to each other which resonate with each other essentialy creating a new waveform. all these things combined is what we perceive as the phasing effect.  
 
 **Coded Visual Representation of the Phasing Effect:**
 
