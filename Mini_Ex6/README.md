@@ -1,6 +1,6 @@
 # Mini_Ex6:
 **Objective:**
-To implement a class-based object oriented sketch via abstracting and designing objects' properties and behaviors, and to furthermore reflect upon the object orientation in the domain of digital culture
+Implement a rule-based generative program, by using loops and conditional statements to strengthen computational comprehendsion. Further more to reflect upon the concept of generativity in a theoretical and practical sense, concerning subjects such as rules, temporality, authorship, emergence and processes.
 
 ### AudioGEN.js
 **The Techno_obj concept:**
