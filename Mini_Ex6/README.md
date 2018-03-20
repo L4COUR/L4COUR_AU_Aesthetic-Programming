@@ -3,7 +3,7 @@
 Implement a rule-based generative program, by using loops and conditional statements to strengthen computational comprehendsion. Further more to reflect upon the concept of generativity in a theoretical and practical sense, concerning subjects such as rules, temporality, authorship, emergence and processes.
 
 ### AudioGEN.js
-**The AudioGEN concept:**
+**The generative art as a phenomenological concept:**
 
 I have in this mini_ex6 tried to continue my notion of minimalism in code, from my previous mini_ex5. I see minimalism in this project as part of the rule based programming, in the sense that I am trying to code something using very few lines, in order to create a very complex result. That is the first rule of my program, the second rule is concerned with implementing some form of audio which can act as a form of noise in the visual expression. The third rule has to do with only using one shape and one form of movement, which in this case would by the ```rect();```and ```rotate();```. My initial idea concerning this mini_ex6 was to make an array of objects and then have the  different objects relate to each other via audio, however I ran out of time, and I werent able to combine the objects with array's in time. the reason that I wanted to have each rect() contained in an object was that I was very heavily inspirered by a lecture held by Rune Søchting, whom is and artist and curator from the danish royal art academie in Copenhagen, concerned with sound as a relational phenomenon. In the lecture Rune brought up this philosophical concept by Maurice Merleau-Ponty 
 </br>
