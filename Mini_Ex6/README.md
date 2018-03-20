@@ -9,7 +9,7 @@ I have in this mini_ex6 tried to continue my notion of minimalism in code, from 
 </br>
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex6/Screen%20Shot%202018-03-20%20at%2001.08.40.png "AudioGEN.js")
 </br>
-Before pressing [RawGit](https://cdn.rawgit.com/L4COUR/Aesthetic_Programming_2018/f390cc2b/Mini_Ex5/Source/index.html) I would once again strongly advice to use a set of headphones for a better experience of the audio.
+Before pressing [RawGit](https://cdn.rawgit.com/L4COUR/Aesthetic_Programming_2018/e9b1283c/Mini_Ex6/Source/index.html) I would once again strongly advice to use a set of headphones for a better experience of the audio.
 </br>
 
 **The Generative process and authorship:**
