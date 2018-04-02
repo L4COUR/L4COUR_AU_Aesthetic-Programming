@@ -148,8 +148,3 @@ class ord {
 }
 
 ```
-**sources:**
-- https://plato.stanford.edu/entries/merleau-ponty/
-- https://www.facebook.com/events/166594717395785/
-
-
