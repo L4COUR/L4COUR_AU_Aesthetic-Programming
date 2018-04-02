@@ -3,10 +3,10 @@
 Design and implement an electronic literature that utilizes written text/audio text as the main medium.
 further more this assignment focuses on concceptualizing code through a collaborative process, and to reflect upon the aesthetics of code and language.
 
-### AudioGEN.js
-**The generative art as a phenomenological concept:**
+### mini_ex7.js
+**the collaborative process of working with e-lit:**
 
-I have in this mini_ex6 tried to continue my notion of minimalism in code, from my previous mini_ex5. I see minimalism in this project as part of the rule based programming, in the sense that I am trying to code something using very few lines, in order to create a very complex result. That is the first rule of my program, the second rule is concerned with implementing some form of audio which can act as a form of noise in the visual expression. The third rule has to do with only using one shape and one form of movement, which in this case would by the ```rect();```and ```rotate();```. My initial idea concerning this mini_ex6 was to make an array of objects and then have the  different objects relate to each other via audio, however I ran out of time, and I werent able to combine the objects with array's in time. the reason that I wanted to have each rect() contained in an object was that I was very heavily inspirered by a lecture held by Rune Søchting, whom is and artist and curator from the danish royal art academie in Copenhagen, concerned with sound as a relational phenomenon. In the lecture Rune explained a philosophical concept by Maurice Merleau-Ponty who is famously focuses on existentialism through the notion of perception. In the lecture Pontys idea of perceiving was explained by drawing a distinction between the visible and the invisible. The visible, was determined as the cultivated perception concerned with sepperat objects which can be described as they are percieved, much like when we perform an object oriented programming, we also describe the attributes and then actions that it can make etc., however it still remains a sepperate objects that not dependend upon anything else, thus comes Pontys argument that nothing is objective, meaning that nobody can be certain that any given object exists. So if you see it as Ponty does, then there is no real visible objects, but we can look at it as an invisble object. invisible object, is determined as a wild form perception, rather than being concerned with what we can see, it is concerned with what we cannot see, therefor can an object be perceived as the relation between the object and what ever et touches. an example could be a table, so if we look at a table through a cultivated perception then we can describe the table as having four legs, being made of wood, the measurements are this width and this height and so forth. if we instead see it through the wild perception then we are concerned with the relation between the table and the ground it stands and, since the object no longer exists in this normal cultivated way it now only exists in a manner of force pressing downwards on the ground. The idea of this wild perception made me think about vectors and generative art, because that a vector is much like an object percived through wild perception a non-object but shows a relation between a start point and an end point, thus marking a certain direction. I also think that general art is not so much about seeing a confined object but about the relations between the objects that are displayed, and the code which conjours them. 
+(text) 
 </br>
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_2018/blob/master/Mini_Ex6/Screen%20Shot%202018-03-20%20at%2001.08.40.png "AudioGEN.js")
 </br>
@@ -21,50 +21,134 @@ So for me the generative process when working with code is concered with heavy u
 **The Code:**
 
 ```javascript
-var kick, tech, fft; //Sound varibles
+var txt, data;      //variabler: txt bliver en array, words er objekter, j er increment og cycleNum er modolu
+var two_alpha = true;
+var fonts = [];
+var words = [];
+var j = 0;
+var cycleNum = 8;
 
-function preload(){
-  kick = loadSound('La Cour - Inside Computers Minds (Original).mp3'); //loading a sample with 4/4 kick drum pattern
-  fft = new p5.FFT(0.8,16);
+var freak, fft, peakDetect;
+
+function preload() {
+  txt = loadStrings("words.txt");
+
+  fonts[0] = loadFont('fonts/Boulding Work St.ttf');
+  fonts[1] = loadFont('fonts/Alien.ttf');
+  fonts[2] = loadFont('fonts/ninjagarden.ttf');
+  fonts[3] = loadFont('fonts/budmo.ttf');
+  fonts[4] = loadFont('fonts/ka1.ttf');
+  fonts[5] = loadFont('fonts/LLPIXEL3.ttf');
+  fonts[6] = loadFont('fonts/distortion.ttf');
+  fonts[7] = loadFont('fonts/04b_30.ttf');
+  fonts[8] = loadFont('fonts/2025.ttf');
+  fonts[9] = loadFont('fonts/JordanBoldGrunge.ttf');
+  fonts[10] = loadFont('fonts/Quesat Regular Demo.otf');
+  fonts[11] = loadFont('fonts/Prisma.ttf');
+  fonts[12] = loadFont('fonts/odessa.ttf');
+  fonts[13] = loadFont('fonts/insider.ttf');
+  fonts[14] = loadFont('fonts/Khalijaka.ttf');
+  fonts[15] = loadFont('fonts/pixelchunker.ttf');
+  fonts[16] = loadFont('fonts/SPACEBOY.ttf');
+  fonts[17] = loadFont('fonts/Robotica.ttf');
+  fonts[18] = loadFont('fonts/GriddyBlocks.ttf');
+  fonts[19] = loadFont('fonts/BLUEFISH STENCIL DEMO.otf');
+  fonts[20] = loadFont('fonts/Forvertz.ttf');
+  fonts[21] = loadFont('fonts/BitMap.ttf');
+  fonts[22] = loadFont('fonts/InvertedStencil.ttf');
+  fonts[23] = loadFont('fonts/Withheld Data.otf');
+  fonts[24] = loadFont('fonts/Cuatra-Bold.ttf');
+  fonts[25] = loadFont('fonts/Quick.ttf');
+  fonts[26] = loadFont('fonts/Danger on the Motorway.otf');
+  fonts[27] = loadFont('fonts/UrbanInline.ttf');
+  fonts[28] = loadFont('fonts/Doctor Glitch.otf');
+  fonts[29] = loadFont('fonts/Slope Opera.otf');
+  fonts[30] = loadFont('fonts/Domotika-Regular-trial.ttf');
+  fonts[31] = loadFont('fonts/Screwdriver.otf');
+  fonts[32] = loadFont('fonts/MaroonBold.ttf');
+  fonts[33] = loadFont('fonts/AtariBold.ttf');
+  fonts[34] = loadFont('fonts/TronBoldInline.ttf');
+
+  freak = loadSound('LFO-Freak.mp3');
 }
 
 function setup() {
-createCanvas(600,600);
-background(255);
+  createCanvas(windowWidth, windowHeight);
+  frameRate(60);
 
-kick.play();
-kick.amp(1);
+  for(let i = 0; i < txt.length; i++) {
+    let col = color(random(0, 255), random(0, 255), random(0, 255)); //startvaerdi for farve. Den aendrer sig laengere nede.
+    words[i] = new ord(txt[i], 125, random(fonts), col, width/10, height/4);  // Det er width/2 og height/2 som skal indstilles til musikken
+  } //Alle arrayenheder fra word.txt bliver transformeret til et objekt med argumenter for det enkelte objekt.
 
+  fft = new p5.FFT(0.1,64);
+  peakDetect = new p5.PeakDetect(120, 540, 0.1, 20);
+
+
+  freak.setVolume(0.3);
+  freak.play();
 }
 
 function draw() {
-//background(255);
-strokeWeight(1);
-stroke(2);
-//noFill();
+  //spectrum analyzer code
+    var spectrum = fft.analyze();
+      for (var i = 0; i< spectrum.length; i++){
+        var x = map(i, 0, spectrum.length, 0, width);
+        var h = -height + map(spectrum[i], 0, 255, height, 0);
+    }
 
-//spectrum analyzer code
-  var spectrum = fft.analyze();
-    for (var i = 0; i< spectrum.length; i++){
-      var x = map(i, 0, spectrum.length, 0, width);
-      var h = -height + map(spectrum[i], 0, 255, height, 0);
+  words[j].display();
+  words[j].fixTimeLoop(cycleNum); //Callback med variabel. FixTimeLoop er alle funktioner, der er afhaengige af modolu.
+}
+
+
+
+class ord {
+  constructor(text, textSz, font, col, x, y) { //Vi lader alpha staa, hvis du vil bruge den til musikken. Ellers cutter vi den ud.
+    this.pos = new createVector(x, y); //Har ikke nogen anden betydning. Huk at henvise med "this/word[i]".pos.x/y.
+    this.text = text;
+    this.textSz = textSz;
+    this.font = font;
+    this.col = col;
   }
 
-for (var x = 0; x <= width; x += 100) {
-  for (var y = 0; y <= height; y += 20){
-    push();
-    rotate(-frameCount/ x*100)
-     translate(random(0,width/2),height/2);
-     rotate(frameCount/ x*10)
-       push();
-         rectMode(CENTER)
-         rect(x,y, h/x*4, h/y*4);
-       pop();
-   pop();
+  setPosition() {
+    // position, numberOfTextElement       Denne skal nok henvises gennem draw
+  }
+
+  display() {
+    var backcol = 0;
+    fft.analyze();
+    peakDetect.update(fft);
+    if (peakDetect.isDetected) {
+      backcol = 255;
+    } else {
+      backcol = 0;
+    }
+
+      background(backcol);
+      if (two_alpha) {
+        this.col.setAlpha(255);
+        two_alpha = false
+      } else if (!two_alpha) {
+        this.col.setAlpha(100);
+        two_alpha = true
+      }
+      fill(this.col);
+      textAlign(CENTER, TOP)
+      textSize(this.textSz);
+      textFont(this.font);
+      text(this.text, this.pos.x, this.pos.y, width/1.2, height/1.2);
+  }
+
+  fixTimeLoop(num) { //NO TOUCH. Aaah. Hvis du vil have noget slaaet sammen med oscillationen, saa put det ind her. Den koeres igennem draw.
+    let n = frameCount*2 % num;
+    if (n == 0) {
+      j++ //Det er random tekst. Den koerer i raekkefoelge.
+    }
   }
 }
 
-}
 ```
 **sources:**
 - https://plato.stanford.edu/entries/merleau-ponty/
