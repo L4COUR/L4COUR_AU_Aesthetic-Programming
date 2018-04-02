@@ -10,7 +10,7 @@ further more this assignment focuses on concceptualizing code through a collabor
 </br>
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex7/Screen%20Shot%202018-04-02%20at%2020.33.53.png "AudioGEN.js")
 </br>
-Before pressing [RawGit](https://cdn.rawgit.com/L4COUR/Aesthetic_Programming_2018/e9b1283c/Mini_Ex6/Source/index.html) I would once again strongly advice to use a set of headphones for a better experience of the audio.
+Before pressing [RawGit](https://cdn.rawgit.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/4ac32962/Mini_Ex7/Source/index_mini_ex7.html) I would once again strongly advice to use a set of headphones for a better experience of the audio.
 </br>
 
 **The Generative process and authorship:**
