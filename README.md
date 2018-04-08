@@ -7,4 +7,5 @@ This is where i will Archive all of my Mini_X's related to my course in Aestheti
 - Mini_Ex4: Obfuscated_FB_Non-human.js
 - Mini_Ex5: Techno_obj.js
 - Mini_Ex6: AudioGEN.js
-- Mini_Ex7: mini_ex7.js
+- Mini_Ex7: mini_ex7.js (Collaborative process with Mark S. Poulsen)
+- Mini_Ex8: mini_ex8.js (Collaborative process with Mark S. Poulsen & Martin Hansen)
