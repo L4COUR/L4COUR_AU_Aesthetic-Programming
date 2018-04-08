@@ -7,3 +7,5 @@ To design and implement a program that utilizes web API(s), and to learn how to 
 
 ### mini_ex8.js
 **The Collaborative Process of Working with API's:**
+
+https://cdn.rawgit.com/Mmarksp/Aesthetic_Programming_2018/fc238976/mini_exercises/mini_ex8/index_mini_ex8.html
