@@ -23,6 +23,8 @@ Another thing a think is relevant to mention in this project is definaly how the
 
 **The Thing about API's:**
 working with API's can be a lot of fun especially if you are able to find some really interesting ones, you might get a lot of ideas, just from scrolling through the huge amounts of them out there on the web. however besides being totally and utterly facinated of what data we are able to acumulate, there is also the matter of using an API, which involves a series of steps. This is initially what can make API's a little bit scary to work with, there is simply so many places were it could go wrong or you might forget to enter some specific details in an URL. I thought that I would just breifly write about this whole gaining access to API's because I think that is the core or understanding API's. of course there is also a matter of being able to interpret a JSON-file, I do however feel that it can be learned with in a matter of minuttes compared with this registration that you will sometimes have to do when you want to use an API. Some websites providing API's are definatly better at making it userfriendly to work with and understand, and some sites are just not that easy to wrap your head around.
+So in order to use an API you will need to obtain the API-key, which is often provided from a developers section on the given site you want the data from. then it is a matter of parsing it into your code, and then getting to a point where you can piece together an API-adress so you can look at the json-file and read what it contains so you can figure out how to get to that part of the json file.
+
 **The Code:**
 
 ```javascript
