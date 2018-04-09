@@ -19,133 +19,92 @@ It should be mentioned that prior to this finished program, a lot of experimenta
 **The Code:**
 
 ```javascript
-var txt, data;      //variabler: txt bliver en array, words er objekter, j er increment og cycleNum er modolu
-var two_alpha = true;
-var fonts = [];
-var words = [];
-var j = 0;
-var cycleNum = 8;
+/*
+_____/\\\\\\\\\_____/\\\\\\\\\\\\\____/\\\\\\\\\\\_______________/\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\\\\\\\\\\\\\_____/\\\\\\\\\\\___
+ ___/\\\\\\\\\\\\\__\/\\\/////////\\\_\/////\\\///______________/\\\//////////__\/////\\\///__\/\\\///////////____/\\\/////////\\\_
+  __/\\\/////////\\\_\/\\\_______\/\\\_____\/\\\________________/\\\_________________\/\\\_____\/\\\______________\//\\\______\///__
+   _\/\\\_______\/\\\_\/\\\\\\\\\\\\\/______\/\\\_______________\/\\\____/\\\\\\\_____\/\\\_____\/\\\\\\\\\\\_______\////\\\_________
+    _\/\\\\\\\\\\\\\\\_\/\\\/////////________\/\\\_______________\/\\\___\/////\\\_____\/\\\_____\/\\\///////___________\////\\\______
+     _\/\\\/////////\\\_\/\\\_________________\/\\\_______________\/\\\_______\/\\\_____\/\\\_____\/\\\_____________________\////\\\___
+      _\/\\\_______\/\\\_\/\\\_________________\/\\\_______________\/\\\_______\/\\\_____\/\\\_____\/\\\______________/\\\______\//\\\__
+       _\/\\\_______\/\\\_\/\\\______________/\\\\\\\\\\\___________\//\\\\\\\\\\\\/___/\\\\\\\\\\\_\/\\\_____________\///\\\\\\\\\\\/___
+        _\///________\///__\///______________\///////////_____________\////////////____\///////////__\///________________\///////////_____
+*/
 
-var freak, fft, peakDetect;
+
+var data = [], words, //These two variables contain two JSON-files. One is an array, because it contains multiple instanses of the same set of strings (see line 45). Therefore it becomes an array containing arrays (since a JSON-file is an array once loaded).
+word = [], //word is a single word from the variables words.
+canvas;
 
 function preload() {
-  txt = loadStrings("words.txt");
-
-  fonts[0] = loadFont('fonts/Boulding Work St.ttf');
-  fonts[1] = loadFont('fonts/Alien.ttf');
-  fonts[2] = loadFont('fonts/ninjagarden.ttf');
-  fonts[3] = loadFont('fonts/budmo.ttf');
-  fonts[4] = loadFont('fonts/ka1.ttf');
-  fonts[5] = loadFont('fonts/LLPIXEL3.ttf');
-  fonts[6] = loadFont('fonts/distortion.ttf');
-  fonts[7] = loadFont('fonts/04b_30.ttf');
-  fonts[8] = loadFont('fonts/2025.ttf');
-  fonts[9] = loadFont('fonts/JordanBoldGrunge.ttf');
-  fonts[10] = loadFont('fonts/Quesat Regular Demo.otf');
-  fonts[11] = loadFont('fonts/Prisma.ttf');
-  fonts[12] = loadFont('fonts/odessa.ttf');
-  fonts[13] = loadFont('fonts/insider.ttf');
-  fonts[14] = loadFont('fonts/Khalijaka.ttf');
-  fonts[15] = loadFont('fonts/pixelchunker.ttf');
-  fonts[16] = loadFont('fonts/SPACEBOY.ttf');
-  fonts[17] = loadFont('fonts/Robotica.ttf');
-  fonts[18] = loadFont('fonts/GriddyBlocks.ttf');
-  fonts[19] = loadFont('fonts/BLUEFISH STENCIL DEMO.otf');
-  fonts[20] = loadFont('fonts/Forvertz.ttf');
-  fonts[21] = loadFont('fonts/BitMap.ttf');
-  fonts[22] = loadFont('fonts/InvertedStencil.ttf');
-  fonts[23] = loadFont('fonts/Withheld Data.otf');
-  fonts[24] = loadFont('fonts/Cuatra-Bold.ttf');
-  fonts[25] = loadFont('fonts/Quick.ttf');
-  fonts[26] = loadFont('fonts/Danger on the Motorway.otf');
-  fonts[27] = loadFont('fonts/UrbanInline.ttf');
-  fonts[28] = loadFont('fonts/Doctor Glitch.otf');
-  fonts[29] = loadFont('fonts/Slope Opera.otf');
-  fonts[30] = loadFont('fonts/Domotika-Regular-trial.ttf');
-  fonts[31] = loadFont('fonts/Screwdriver.otf');
-  fonts[32] = loadFont('fonts/MaroonBold.ttf');
-  fonts[33] = loadFont('fonts/AtariBold.ttf');
-  fonts[34] = loadFont('fonts/TronBoldInline.ttf');
-
-  freak = loadSound('LFO-Freak.mp3');
+  words = loadJSON("encouraging_words.json");
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  frameRate(60);
+  canvas = createCanvas(windowWidth/2, windowHeight/2);
+  canvas.position(0,0);
+  getRandom();    //These two functions are first called upon once during setup.
+  askGiphy();
 
-  for(let i = 0; i < txt.length; i++) {
-    let col = color(random(0, 255), random(0, 255), random(0, 255)); //startvaerdi for farve. Den aendrer sig laengere nede.
-    words[i] = new ord(txt[i], 125, random(fonts), col, width/10, height/4);  // Det er width/2 og height/2 som skal indstilles til musikken
-  } //Alle arrayenheder fra word.txt bliver transformeret til et objekt med argumenter for det enkelte objekt.
-
-  fft = new p5.FFT(0.1,64);
-  peakDetect = new p5.PeakDetect(120, 540, 0.1, 20);
-
-
-  freak.setVolume(0.3);
-  freak.play();
-}
-
-function draw() {
-  //spectrum analyzer code
-    var spectrum = fft.analyze();
-      for (var i = 0; i< spectrum.length; i++){
-        var x = map(i, 0, spectrum.length, 0, width);
-        var h = -height + map(spectrum[i], 0, 255, height, 0);
-    }
-
-  words[j].display();
-  words[j].fixTimeLoop(cycleNum); //Callback med variabel. FixTimeLoop er alle funktioner, der er afhaengige af modolu.
+  setInterval(getRandom, 15000); //They are then called upon again every 15 seconds.
+  setInterval(askGiphy, 15000);
 }
 
 
-
-class ord {
-  constructor(text, textSz, font, col, x, y) { //Vi lader alpha staa, hvis du vil bruge den til musikken. Ellers cutter vi den ud.
-    this.pos = new createVector(x, y); //Har ikke nogen anden betydning. Huk at henvise med "this/word[i]".pos.x/y.
-    this.text = text;
-    this.textSz = textSz;
-    this.font = font;
-    this.col = col;
-  }
-
-  setPosition() {
-    // position, numberOfTextElement       Denne skal nok henvises gennem draw
-  }
-
-  display() {
-    var backcol = 0;
-    fft.analyze();
-    peakDetect.update(fft);
-    if (peakDetect.isDetected) {
-      backcol = 255;
-    } else {
-      backcol = 0;
-    }
-
-      background(backcol);
-      if (two_alpha) {
-        this.col.setAlpha(255);
-        two_alpha = false
-      } else if (!two_alpha) {
-        this.col.setAlpha(100);
-        two_alpha = true
-      }
-      fill(this.col);
-      textAlign(CENTER, TOP)
-      textSize(this.textSz);
-      textFont(this.font);
-      text(this.text, this.pos.x, this.pos.y, width/1.2, height/1.2);
-  }
-
-  fixTimeLoop(num) { //NO TOUCH. Aaah. Hvis du vil have noget slaaet sammen med oscillationen, saa put det ind her. Den koeres igennem draw.
-    let n = frameCount*2 % num;
-    if (n == 0) {
-      j++ //Det er random tekst. Den koerer i raekkefoelge.
-    }
+function getRandom() {
+  removeElements(); //Removes previous DOM-elements: gifs and text.
+  for(let i = 0; i < 6; i++) {
+    word[i] = random(words.encouraging_words); //Six random words are picked out from the JSON-file over this for-loop
+    let ord = createP(word[i]);
+    ord.position(50+ 200 * i, 350); //The words are positioned apart from one another using the i-value to multiply.
   }
 }
+
+function askGiphy() {
+  for(i = 0; i < 6; i++) { //The six random words are then used here to get six completely different JSON-files.
+    data[i] = loadJSON("http://api.giphy.com/v1/gifs/search?q=" + word[i] + "&api_key=dc6zaTOxFJmzC&limit=25", gotData); //The callback function makes it so that gotData will run for every iteration of the loop right after this line here.
+  }
+}
+
+function gotData(data) {
+  let number = floor(random(0, 25)); //The JSON-file contains 25 possible gifs. As one file is loaded, the program will use a random number to pick one gif out.
+  createImg(data.data[number].images.fixed_width_downsampled.url); //The gif is then displayed. fixed_width_downsampled was the only option we deemed was workable for our program.
+}
+
+
+
+// var xoff = 0.0; noise variable
+
+// function textDisplay() {
+//     textSize(46);
+//     text(word[i], pos.x, pos.y);
+// }
+
+
+
+// function draw() {
+//   for(let i = 0; i < gifs.length; i++) {
+//     xoff = xoff + 0.01;
+//     let nX = noise(xoff)*width;
+//     let nY = noise(xoff)*height;
+//     gifs[i].position(nX, nY);
+//   }
+// }
+
+
+//                    we have chosen not to use objects for this program,
+//                      because it conflicted with the way gif function
+// class glitch {
+//   constructor(gif, x, y, alpha) {
+//     this.gif = gif;
+//     this.pos = new createVector(x, y)
+//     this.alpha = alpha;
+//   }
+//
+//   display() {
+//     image(this.gif, this.pos.x, this.pos.y); //Erstat med Image
+//   }
+// }
 
 ```
 **Sources:**
