@@ -6,7 +6,7 @@ Written by La Cour.
 To design and implement a program that utilizes web API(s), and to learn how to code and conceptualize a program in a collaborative envoirment. furthermore to reflect upon the processes of data parsing via API, paying attention to registration, availablity/ selection/manipulation of data.
 
 ### mini_ex8.js
-**The Collaborative Process of Working with API's:**
+**The Collaborative Process of Programming with API's:**
 
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex8/Screen%20Shot%202018-04-08%20at%2015.32.37.png "mini_ex8.js")
 </br>
@@ -21,8 +21,8 @@ It should be mentioned that prior to this finished program, a lot of experimenta
 Another thing a think is relevant to mention in this project is definaly how the collaboration worked out. Last week when it was just Mark and I, it really went well and so did the collaboration between Mark, Martin and I. Of course it can be quite difficult at times because there is also so many who can code at the same time, without the code getting totally out of control, however I think that being more people to inspire each other and discuss possible option for where the code should go next, or discuss what we are actually trying to show with this code is very nice. I also think it's very nice to get this more collaborative view on the mini_ex's it is certainly very different from when you are working on it yourself. However something that could be nice in regards to this collaborative work would be to perhaps introduce different work methods in regards to code. I think that quickly it becomes one person in the group who has to code everything, mainly because that person often is the one who know where they wonna go I guess. I think that in order to avoid that it might be useful to sort of really plan out how this code is going to be before starting to program anything, and then divide it into smalle task that can then later be combined. Or maybe even trying to utilize github more with pull-requests could be nice. thats just my thoughts on the subject of collaborative programming from my experiences with it so far.
 </br>
 
-
-
+**The Thing about API's:**
+working with API's can be a lot of fun especially if you are able to find some really interesting ones, you might get a lot of ideas, just from scrolling through the huge amounts of them out there on the web. however besides being totally and utterly facinated of what data we are able to acumulate, there is also the matter of using an API, which involves a series of steps. This is initially what can make API's a little bit scary to work with, there is simply so many places were it could go wrong or you might forget to enter some specific details in an URL. I thought that I would just breifly write about this whole gaining access to API's because I think that is the core or understanding API's. of course there is also a matter of being able to interpret a JSON-file, I do however feel that it can be learned with in a matter of minuttes compared with this registration that you will sometimes have to do when you want to use an API. Some websites providing API's are definatly better at making it userfriendly to work with and understand, and some sites are just not that easy to wrap your head around.
 **The Code:**
 
 ```javascript
