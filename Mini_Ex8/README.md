@@ -109,5 +109,5 @@ function gotData(data) {
 
 ```
 **Sources:**
-https://github.com/Mmarksp/Aesthetic_Programming_2018/tree/master/mini_exercises/mini_ex8
-https://developers.giphy.com/explorer/
+- https://github.com/Mmarksp/Aesthetic_Programming_2018/tree/master/mini_exercises/mini_ex8
+- https://developers.giphy.com/explorer/
