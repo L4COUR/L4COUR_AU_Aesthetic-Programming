@@ -3,11 +3,12 @@
 **Objective:**
 Acquiring the skill of decomposing a computer program into definable parts, and organize this decomposition using a flowchart. further more to understand a flowchart as a means for communication and planning, and being able to comprehend the concept of algorithms from the perspectives of both computer science and cultural understanding. 
 
-### mini_ex8.js
-**The Collaborative Process of Programming with API's:**
+### Obfuscated_FB_Non-human.js as a flowchart
+**De-composition of my Mini_Ex4:**
 
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex9/Mini_ex09%20(3).png "mini_ex9_flowchart")
 </br>
+
 
 This program is utilizing Giphy's API in order to gain access to this huge database of gif-files. The JSON-file provided by giphy enables us to gain access to specific gifs, depeding on certain keywords. We thought it would be interesting to search for encouraging words, and so we created an encouraging_words.json file containing as many positive words that we could think of and find throughout the web. We then used the encouraging_words.json file as our search query for the Giphy API. The results that we got was quite interesting. The gif's and the words would ocasionaly be match each other in meaning, however sometimes the gif's would have a totally different meaning in relation to the word and may even be outright silly or horrible. It is certainly interesting how this program can either be this sort of translation of words to gif's or on the other hand have this rather preposterous nature in relation to the translation. with that in mind I will try to explain how the code works. So when the user initiates the program the .json file is loaded providing the Giphy API, with a set of six randomly picked words from the encouraging_words.json file. These words will then act as a search on Giphy which will then find the parse the six corresponding gif's to the submitted words. The six gif's are then portrayed on a straight line on the canvas along with the six encouraging words picked randomly from the json file, the process then repeats every 15 secoonds, thus giving the user a little time to look at the relations between the words and the gif's.
 </br>
