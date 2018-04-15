@@ -10,9 +10,9 @@ Acquiring the skill of decomposing a computer program into definable parts, and 
 </br>
 [Obfuscated_FB_Non-human.js](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/tree/master/Mini_Ex4).
 
-This Mini_Ex is very different in comparison to the previous ones I have made, in the sense that it focuses more upon the understanding and de-composition of pre-existing code. I have chosen to decompose my Mini_Ex4 which is probably the most complicated p5.js program I have coded so far, and I thought that this would be a nice oppertunity to make it more clear what the rather complex code does exactly. I have drawed the flowchart above in a way which sort of creates 4 segments which are all interconnected with each other. So the first segment is...
+This Mini_Ex is very different in comparison to the previous ones I have made, in the sense that it focuses more upon the understanding and de-composition of pre-existing code. I have chosen to decompose my Mini_Ex4 which is probably the most complicated p5.js program I have coded so far, and I thought that this would be a nice oppertunity to make it more clear what the rather complex code does exactly. I have drawed the flowchart above in a way which sort of creates 4 segments which are all interconnected with each other. So the first segment is where the program is initiated and the global varibles are being defined. the webcam is also being initiated here so that the video-feed can then later be tampered with. another crucial part of the first segment is also the getting the serial data from an arduino circuit with a light-dependent resistor which can sensor UV intensities, this serial data is then channeled into the p5.js program via a ```p5.SerialPort()```, in order to be used as the variable ```inData```. 
 
-**The Thing about API's:**
+**Header:**
 (Text)
 
 **The Code:**
