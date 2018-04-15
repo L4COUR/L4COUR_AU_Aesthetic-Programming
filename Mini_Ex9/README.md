@@ -24,94 +24,145 @@ working with API's can be a lot of fun especially if you are able to find some r
 So in order to use an API you will need to obtain the API-key, which is often provided from a developers section on the given site you want the data from. then it is a matter of parsing it into your code, and then getting to a point where you can piece together an API-adress so you can look at the json-file and read what it contains so you can figure out how to get to that part of the json file.
 
 **The Code:**
+![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex4/La-Cour---Obfuscated_FB_Non-human.gif "mini_ex9_flowchart")
 
 ```javascript
-/*
-_____/\\\\\\\\\_____/\\\\\\\\\\\\\____/\\\\\\\\\\\_______________/\\\\\\\\\\\\__/\\\\\\\\\\\__/\\\\\\\\\\\\\\\_____/\\\\\\\\\\\___
- ___/\\\\\\\\\\\\\__\/\\\/////////\\\_\/////\\\///______________/\\\//////////__\/////\\\///__\/\\\///////////____/\\\/////////\\\_
-  __/\\\/////////\\\_\/\\\_______\/\\\_____\/\\\________________/\\\_________________\/\\\_____\/\\\______________\//\\\______\///__
-   _\/\\\_______\/\\\_\/\\\\\\\\\\\\\/______\/\\\_______________\/\\\____/\\\\\\\_____\/\\\_____\/\\\\\\\\\\\_______\////\\\_________
-    _\/\\\\\\\\\\\\\\\_\/\\\/////////________\/\\\_______________\/\\\___\/////\\\_____\/\\\_____\/\\\///////___________\////\\\______
-     _\/\\\/////////\\\_\/\\\_________________\/\\\_______________\/\\\_______\/\\\_____\/\\\_____\/\\\_____________________\////\\\___
-      _\/\\\_______\/\\\_\/\\\_________________\/\\\_______________\/\\\_______\/\\\_____\/\\\_____\/\\\______________/\\\______\//\\\__
-       _\/\\\_______\/\\\_\/\\\______________/\\\\\\\\\\\___________\//\\\\\\\\\\\\/___/\\\\\\\\\\\_\/\\\_____________\///\\\\\\\\\\\/___
-        _\///________\///__\///______________\///////////_____________\////////////____\///////////__\///________________\///////////_____
+/* This mini_ex4 evolves around data capturing in any shape or form
+in this example I have chosen to focus on capturing serial data
+from a light-dependend-resistor, which gives values to ambient light in a room.
+
+connecting an arduino uno to p5.js through serial is not an easy task,
+especially when you dont know anything about serial communication.
 */
 
+//Hardware -> Software communication
+var started = false;
+var serial //variable to hold an instance of the serialport lib.
+var portName = '/dev/cu.usbmodem1421';
+var inData;
 
-var data = [], words, //These two variables contain two JSON-files. One is an array, because it contains multiple instanses of the same set of strings (see line 45). Therefore it becomes an array containing arrays (since a JSON-file is an array once loaded).
-word = [], //word is a single word from the variables words.
-canvas;
+//button
+var button;
 
-function preload() {
-  words = loadJSON("encouraging_words.json");
-}
+//web-cam
+var capture;
 
 function setup() {
-  canvas = createCanvas(windowWidth/2, windowHeight/2);
+  var canvas;
+  canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0,0);
-  getRandom();    //These two functions are first called upon once during setup.
-  askGiphy();
+//web-cam capture
+  capture = createCapture(VIDEO);
+  capture.hide();
+  rectMode(CENTER);
+  noStroke();
 
-  setInterval(getRandom, 15000); //They are then called upon again every 15 seconds.
-  setInterval(askGiphy, 15000);
+  frameRate(10);
+
+//serial data from arduino, interface
+serial = new p5.SerialPort(); //make a new instance of the serialport lib.
+  serial.on('list', println);  // set a callback function for the serialport list event
+  serial.on('connected', serverConnected); // callback for connecting to the server
+  serial.on('open', portOpen);        // The port opening
+  serial.on('data', serialEvent);     // New data arrives
+  serial.on('error', serialError);    // Errors
+  serial.on('close', portClose);      // The port closing
+
+serial.open(portName);              // open a serial port
+/*draw and serial event function can now be combined
+in order to make the code manifest itself as a material
+in the "real world".
+*/
+
+var button = createButton("Log In");
+button.mousePressed(start);
+button.style("display","inline-block");
+button.style("color","#fff");
+button.style("padding","5px 8px");
+button.style("text-decoration","none");
+button.style("font-size","0.9em");
+button.style("font-weight","normal");
+button.style("border-radius","3px");
+button.style("border","none");
+button.style("text-shadow","0 -1px 0 rgba(0,0,0,.2)");
+button.style("background","#4c69ba");
+button.style("background","-moz-linear-gradient(top, #4c69ba 0%, #3b55a0 100%)");
+button.style("background","-webkit-gradient(linear, left top, left bottom, color-stop(0%, #3b55a0))");
+button.style("background","-webkit-linear-gradient(top, #4c69ba 0%, #3b55a0 100%)");
+button.style("background","-o-linear-gradient(top, #4c69ba 0%, #3b55a0 100%)");
+button.style("background","-ms-linear-gradient(top, #4c69ba 0%, #3b55a0 100%)");
+button.style("background","linear-gradient(to bottom, #4c69ba 0%, #3b55a0 100%)");
+button.style("filter","progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c69ba', endColorstr='#3b55a0', GradientType=0 )");
+button.position(width/1.19,35);
+
+noLoop();
 }
 
 
-function getRandom() {
-  removeElements(); //Removes previous DOM-elements: gifs and text.
-  for(let i = 0; i < 6; i++) {
-    word[i] = random(words.encouraging_words); //Six random words are picked out from the JSON-file over this for-loop
-    let ord = createP(word[i]);
-    ord.position(50+ 200 * i, 350); //The words are positioned apart from one another using the i-value to multiply.
+function draw() {
+  if(started){
+
+
+    clear(0);
+      fill(0);
+      capture.loadPixels();
+      for (var cy = 0; cy < capture.height; cy += 3) {
+        for (var cx = 0; cx < capture.width; cx += 3) {
+          var offset = ((cy*capture.width)+cx)*4+inData;
+          var xpos = (cx / capture.width) * width;
+          var ypos = (cy / capture.height) * height;
+          rect(xpos, ypos, 10+(inData-100),
+            (20) * (capture.pixels[offset+1]/200));
+          }
+        }
+  //image(capture, 0, 0, 320, 240);
+  //filter(INVERT);
+
   }
 }
 
-function askGiphy() {
-  for(i = 0; i < 6; i++) { //The six random words are then used here to get six completely different JSON-files.
-    data[i] = loadJSON("http://api.giphy.com/v1/gifs/search?q=" + word[i] + "&api_key=dc6zaTOxFJmzC&limit=25", gotData); //The callback function makes it so that gotData will run for every iteration of the loop right after this line here.
+function clearence() {
+  clear();
+}
+
+var p;
+
+function start(){
+   started = true;
+   loop();
+   p = createElement('p', 'Human to Non-human data transfer complete.');
+   p.position(0,0);
+   p.style("color","#fff");
+}
+
+//serial data - in console.log
+  function serialEvent() {
+    inData = Number(serial.read());
+    console.log(inData);
   }
-}
 
-function gotData(data) {
-  let number = floor(random(0, 25)); //The JSON-file contains 25 possible gifs. As one file is loaded, the program will use a random number to pick one gif out.
-  createImg(data.data[number].images.fixed_width_downsampled.url); //The gif is then displayed. fixed_width_downsampled was the only option we deemed was workable for our program.
-}
+  function println(portln){ //shows the data from the arduino in the console
+    for (var i = 0; i < portList.length; i++){
+      console.log(i + " " + portList[i]);
+    }
+  }
 
+// All the functions below are callback functions, for utilitarian reasons
+  function serverConnected() {
+    println('connected to server.');
+  }
 
+  function portOpen() {
+    println('the serial port opened.')
+  }
 
-// var xoff = 0.0; noise variable
+  function serialError(err) {
+    println('Something went wrong with the serial port. ' + err);
+  }
 
-// function textDisplay() {
-//     textSize(46);
-//     text(word[i], pos.x, pos.y);
-// }
-
-
-
-// function draw() {
-//   for(let i = 0; i < gifs.length; i++) {
-//     xoff = xoff + 0.01;
-//     let nX = noise(xoff)*width;
-//     let nY = noise(xoff)*height;
-//     gifs[i].position(nX, nY);
-//   }
-// }
-
-
-//                    we have chosen not to use objects for this program,
-//                      because it conflicted with the way gif function
-// class glitch {
-//   constructor(gif, x, y, alpha) {
-//     this.gif = gif;
-//     this.pos = new createVector(x, y)
-//     this.alpha = alpha;
-//   }
-//
-//   display() {
-//     image(this.gif, this.pos.x, this.pos.y); //Erstat med Image
-//   }
-// }
+  function portClose() {
+    println('The serial port closed.');
+  }
 
 ```
 **Sources:**
