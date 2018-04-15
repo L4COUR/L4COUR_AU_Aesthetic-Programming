@@ -1,9 +1,7 @@
-# Mini_Ex8:
-*Mark Staun Poulsen, Frederik la Cour and Martin Hansen*  
-Written by La Cour.
+# Mini_Ex9:
 
 **Objective:**
-To design and implement a program that utilizes web API(s), and to learn how to code and conceptualize a program in a collaborative envoirment. furthermore to reflect upon the processes of data parsing via API, paying attention to registration, availablity/ selection/manipulation of data.
+Acquiring the skill of decomposing a computer program into definable parts, and organize this decomposition using a flowchart. further more to understand a flowchart as a means for communication and planning, and being able to comprehend the concept of algorithms from the perspectives of both computer science and cultural understanding. 
 
 ### mini_ex8.js
 **The Collaborative Process of Programming with API's:**
