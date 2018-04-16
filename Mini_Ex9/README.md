@@ -18,3 +18,9 @@ This Mini_Ex is very different in comparison to the previous ones I have made, i
 **An Idea for a potentially interesting game:**
 
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex9/Flowchart_of_PacMan.jpg "mini_ex9_flowchart")
+
+**An Idea for a controversial use of Mugshot API's in a Fakebook context:**
+
+![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex9/Flowchart_of_Chicago_Police.jpg
+ "mini_ex9_flowchart")
+
