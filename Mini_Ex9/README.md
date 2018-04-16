@@ -14,5 +14,7 @@ This Mini_Ex is very different in comparison to the previous ones I have made, i
 
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex4/La-Cour---Obfuscated_FB_Non-human.gif "mini_ex9_flowchart")
 
-**Group Work:**
+### Group work: final project
+**An Idea for a potentially interesting game:**
 
+![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex9/Flowchart_of_PacMan.jpg "mini_ex9_flowchart")
