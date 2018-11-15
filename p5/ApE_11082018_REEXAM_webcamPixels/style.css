@@ -1,0 +1,31 @@
+#matrix {
+  width: 800px;
+}
+
+.checkBox {
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  border-radius: 4px;
+  float: left;
+}
+
+input[type="checkbox"]{
+  opacity: 1;
+  width: 0;
+  margin:0;
+}
+
+label[for="Like"]{
+  display:inline-block;
+  margin-bottom: 10px;
+  padding-left: 26px;
+  background: url(img/Like_Button) no-repeat;
+  background-position: center;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+input:checked + label[for="Like"]{
+  color: #ce1010
+}
