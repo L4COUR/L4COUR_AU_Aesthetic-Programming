@@ -1,9 +1,5 @@
 # Aesthetic Programming: Reexam
-
-</br>
-</br>
-<a href="https://github.com/L4COUR/L4COUR_Mini-Exs_Aesthetic-Programming-Course/blob/master/ReExam/Screen%20Shot%202018-08-15%20at%2001.14.12.png"></a>
-</br>
+![alt text](https://github.com/L4COUR/L4COUR_Mini-Exs_Aesthetic-Programming-Course/blob/master/ReExam/Screen%20Shot%202018-08-15%20at%2001.14.12.png "Logo Title Text 1")
 </br>
 
 In this project, I have chosen to expand on the weekly mini exercise 4 from the Aesthetic Programming curriculum concerning the topic of data capturing. The main objective of that particular mini exercise was to critically reflect upon the activity of data capturing in digital culture, along with developing a program based on the open call “CAPTURE ALL”  from Transmediale 2015. The program would then serve as a starting point for this critical reflection.
