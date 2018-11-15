@@ -11,7 +11,7 @@ The console.log is activated every time a pixel is in the active state, this wil
 
 ### Section 2: The examination of code and conceptual conjunctions
 As previously explained, my program is centered on capturing video data from a webcam and analyzing it in order to extract the RGBA values. This data is then used to create a matrix system using the nested for-loops. The idea here is that creating this matrix corresponds to symbolically creating a framework for social interaction on the web in the same fashion that other social media services have, such as Facebooks social button interaction system. Feeding data into this particular matrix is essentially an interaction just like pressing a button with your mouse. Although, it is slightly different.
-
+```javascript
 video.loadPixels();
 for (var y = 0; y < video.height; y++) {
   for (var x = 0; x < video.width; x++) {
@@ -20,10 +20,10 @@ var index = (x + y * video.width)*4;
   var g = video.pixels[index+1]; //  Green
   var b = video.pixels[index+2]; //  Blue
   var a = video.pixels[index+3]; //  Alpha
-
+  ```
 Normally when we encounter buttons we tend to have a conceptual model of how to perform an interaction with it and what that interaction results in. Pold writes: “A button indicates a functional control; something well defined and predictable will happen as a result of the user pressing it” . This definition only applies to how mechanical buttons works. In software, buttons consist of a set of visual abstractions which enables a more arbitrary user approach towards its function. In truth, the visual buttons in a piece of software are there to resemble mechanical buttons and aid user interaction with the interface.  The software conception of a button is quite apparent in the way the user is able to interact through my program. 
 Rather than giving the user the feeling of a singular controllable button that has an effect that corresponds to a classic mechanical comprehension of how buttons work, I programmed the buttons in such a way that the user is constantly interacting with them by just being present in front of the webcam. Thus, the result is a continuous and constant interaction with the multiple buttons in the matrix. This takes away one of the important purposes of the button, which is forcing the user into a process of binary decision making . Instead, when the user is interacting with multiple buttons simultaneously it creates a sensation of uncontrollability, resulting in an unconscious action of engaging with the software.
-
+```javascript
 if (bright > threshold) {
         	tint(255,bright)
         	console.log('$',x+bright,'Like'); 
@@ -31,7 +31,7 @@ if (bright > threshold) {
       } else {
         	tint(255,0)
       }
-
+```
 Another important part of the software is the conditional statement, in which each like in the matrix is assigned its individual value. Because each pixel in the matrix is actually an image and not a button, it creates this interesting dynamic, where there is a gradual range in the expression of likes. If the conditional statement was controlling an actual button it would control the binary properties to either be active or inactive. However, because we are utilizing the RGBA data that pulls floating point values between 0.00 and 255.00, and not binary integers (1 or 0). It enables the visual abstractions to display gratified transparency for each like in the matrix. Resulting in a far more expressive and organic interaction. Using non-binary values as a way of interacting is establishing a connection of human expression, and by displaying the like buttons in different degrees of transparency, it gives the user visual feedback, and makes the interaction with the individual pixels seem more organic due to the seemingly different velocities, just like a human is able to press a button in either a hard or soft manner. 
 What the user can’t see is how each interaction no matter if it is a seemingly hard or soft interaction is all recorded and stored through the console.log('$’,x+bright,'Like'); line. All of the pixels and all the video data that you are creating are a part of another system running in the backend of the program. This is representing how, as Gerlitz and Helmond put it, "(…) Facebook's Like economy contributes to the making of an alternative fabric, organised through data flows in the back end."  So while the user is interacting with the software it is collecting large amounts of behavioral data from the user and putting that data up for auction without the user knowing. This is where each bit of data is commodified and sold to the highest bidder, which then enables companies to fund and produce targeted advertisement aimed at the user.    
 	All of the examples I have analyzed in this section serve to enhance the users’ comprehension of my program in terms of understanding how it works in relation to the aspects of our software culture. 
