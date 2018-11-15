@@ -1,4 +1,11 @@
 # Aesthetic Programming: Reexam
+
+</br>
+</br>
+<a href="https://github.com/L4COUR/L4COUR_Mini-Exs_Aesthetic-Programming-Course/blob/master/ReExam/Screen%20Shot%202018-08-15%20at%2001.14.12.png"></a>
+</br>
+</br>
+
 In this project, I have chosen to expand on the weekly mini exercise 4 from the Aesthetic Programming curriculum concerning the topic of data capturing. The main objective of that particular mini exercise was to critically reflect upon the activity of data capturing in digital culture, along with developing a program based on the open call “CAPTURE ALL”  from Transmediale 2015. The program would then serve as a starting point for this critical reflection.
 In addition to this topic, I further intend to explain in detail how the program, that I have developed for this exam, works and the concept or theme that it addresses. This is achieved by analyzing bits of the code in conjunction with Gerlitz and Helmond’s paper: “The like economy: Social buttons and the data-intensive web” (2013)  and Søren Pold’s chapter “Button” (2008) from the book: “Software Studies lexicon” . 
 This will then enable a critical reflection of the activity of data capturing in our digital culture, and then finally discuss the question regarding; how my program is demonstrating the ability to integrate practical skills and theoretical understandings in order to conceptualize, articulate and develop computational artifacts that are able to critically examine or address the aesthetic, cultural, social and political aspects of software. Here, I will be using evidence from the previous sections of this paper.
