@@ -10,6 +10,7 @@ This is where i will Archive all of my Mini_X's related to my course in Aestheti
 - Mini_Ex7: mini_ex7.js (Collaborative process with Mark S. Poulsen)
 - Mini_Ex8: mini_ex8.js (Collaborative process with Mark S. Poulsen & Martin Hansen)
 - Mini_Ex9: Flowchart of Mini_Ex4
+- PCD@Aarhus_09-02-2019_PromoCode: Promotional code for the Processing Community Day @Aarhus 09-02-2019
 - ReExam: Data Capturing + Like Economy
 
 # relating Repositories
