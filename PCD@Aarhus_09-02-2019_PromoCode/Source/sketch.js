@@ -1,4 +1,4 @@
-// Processing Community Day @Aarhus 09-02-2019 
+// Processing Community Day @Aarhus 09-02-2019
 var osc, fft, freq;
 
 function setup() {
@@ -23,9 +23,9 @@ function draw() {
     var x = map(i, 0, waveform.length, 0, width);
     var y = map(waveform[i], -1, 1, height, 0);
 
-    	strokeWeight(0.5);
-    	var alpha3 = map(mouseX, width, 0, 255, 0);
-    	fill(255, 255, 255, 0 + alpha3);
+    strokeWeight(0.5);
+    var alpha3 = map(mouseX, width, 0, 255, 0);
+    fill(255, 255, 255, 0 + alpha3);
     rect(x, y, 1.5, 2);
   }
   endShape();
@@ -36,12 +36,12 @@ function draw() {
 
   //PCD
   push();
-  translate(width / 2, (height / 2)-30);
+  translate(width / 2, (height / 2) - 30);
   textAlign(LEFT);
   textSize(42);
   textFont('Georgia');
   var alpha1 = map(mouseX, width / 1.5, 0, 255, 00);
-  var c = 255-alpha3;
+  var c = 255 - alpha3;
   fill(c, c, c, 255 - alpha1);
   noStroke();
   text('Processing', 0, 0);
@@ -51,12 +51,12 @@ function draw() {
 
   //@Aarhus, 09-02-2019
   push();
-  translate(width / 2, (height / 2)-30);
+  translate(width / 2, (height / 2) - 30);
   textAlign(RIGHT);
   textSize(42);
   textFont('Helvetica');
   var alpha2 = map(mouseX / 3, 0, width, 255, 0);
-  fill(0, 0, 0, 255-alpha2);
+  fill(0, 0, 0, 255 - alpha2);
   noStroke();
   text('@Aarhus', 0, 42);
   text('09-02-2019', 0, 84);
@@ -64,12 +64,12 @@ function draw() {
 
   // Click to Learn More
   push();
-  translate((width-10), (height / 2)+60);
+  translate((width - 10), (height / 2) + 60);
   textAlign(RIGHT);
   textSize(25);
-   textFont('Helvetica');
+  textFont('Helvetica');
   var alpha2 = map(mouseX / 3, 0, width, 255, 0);
-  fill(0, 0, 0, 255-alpha2);
+  fill(0, 0, 0, 255 - alpha2);
   noStroke();
   text('Click', 0, 22);
   text('to learn', 0, 44);

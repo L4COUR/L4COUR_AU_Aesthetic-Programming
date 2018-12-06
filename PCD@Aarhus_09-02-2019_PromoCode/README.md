@@ -1,5 +1,7 @@
 # PCD@Aarhus_09-02-2019_PromoCode:
-*Author: Frederik la Cour*  
+*Author: Frederik la Cour*
+Digital Design student at Aarhus University, Sound & Media Artist. Attended the course on Aesthetic Programming, where he learned how to perceive code as a material for critical reflection on conceptual matters. Coupling his appreciation for aesthetic programming with his passion for audio-design and electronic music, has installed a new perception on sound experimentation.
+
 
 **Objective:**
 To design a sketch for promoting the PCD @ Aarhus, which is a worldwide event that focuses on promoting code, diversity, creativity and community. The event will happen 09-02-2019 @ DOKK1 in the city of Aarhus. The code should be relatively simple, yet experimentation is highly encouraged, although the sketch must be easy enough to engage with. The idea behind is to keep the community aware of this event coming. the code have to be able to run in the p5 web editor in order be available for the general public as a promotional code.
