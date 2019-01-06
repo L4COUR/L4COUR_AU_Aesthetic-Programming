@@ -3,8 +3,15 @@
 // TO DO; make patch-chords, figure out a point and click interaction with mouse
 // connecting objects to objects, and using it as a button for controlling something.
 
-let maxobject1; let maxobject2; var isOverCircle; var overObj = false; var
-locked = false;
+//variables for the MaxObj
+let maxobject1;
+let maxobject2;
+var isOverCircle;
+var overObj = false;
+var locked = false;
+
+// patch_chord variables
+var patch_chord = [];
 
 var dragX;
 var dragY;
@@ -12,36 +19,43 @@ var moveX;
 var moveY;
 
 function setup() {
+  background(180);
   createCanvas(windowWidth,windowHeight);
   maxobject1 = new MaxObj("Home~",200,150,180,50,15);
-  maxobject2 = new MaxObj("About",200,350,200,50,15);
+  maxobject2 = new MaxObj("Works",250,350,200,50,15);
 }
-
-function draw() {
-  background(180);
-  maxobject1.show();
-  maxobject2.show();
-
-//  stroke(0);
-  //strokeWeight(2);
-  //line(dragX,dragY,mouseX,mouseY);
-}
-
-var mouseMoved = function() { // Move gray circle
-	  moveX = mouseX;
-	  moveY = mouseY;
-};
-
-var mouseDragged = function() { // Move black circle
-	  dragX = mouseX;
-	  dragY = mouseY;
-};
 
 function mousePressed() {
   maxobject1.io();
   maxobject2.io();
-  console.log(mouseX,mouseY);
+
+  if (isOverCircle = true && overObj) {
+    patch_chord.push(new Patcher(maxobject1.ex,maxobject1.ey,mouseX,mouseY));
+  }
+
+
+  //if (overObj == true){
+  //  patch_chord.push(new Patcher(maxobject1.ex,maxobject1.ey,mouseX,mouseY));
+  //}
+  //console.log(mouseX,mouseY);
+//patch_chord[i].move();
 }
+
+function draw() {
+  background(180);
+  //patch_chord = new Patcher(maxobject1.ex,maxobject1.ey,mouseX,mouseY);
+
+  maxobject1.show();
+  maxobject2.show();
+  //patch_chord.show();
+
+  for (var i = 0; i < patch_chord.length; i++) {
+   patch_chord[i].show();
+   //patch_chord[i].move();
+  }
+
+}
+
 
 class MaxObj {
   constructor(name,x,y,w,h,r) {
@@ -63,18 +77,22 @@ class MaxObj {
         overObj = true;
       if(!locked) {
         console.log("In", this.name);
+        set(this.ex,this.ey);
         stroke(255);
         strokeWeight(this.strokeW+5);
+
       }
     } else {
       stroke(156,39,176);
       strokeWeight(this.strokeW);
       console.log("Out", this.name);
+      set(mouseX,mouseY);
       overObj = false;
     }
   }
 
   show() {
+    //MaxObj - box template
     stroke(0);
     strokeWeight(this.strokeW);
     fill("#7D7F84");
@@ -90,14 +108,16 @@ class MaxObj {
     // Object output
     var distance = dist(mouseX, mouseY, this.ex, this.ey);
     // if the distance is less than the circle's radius
-    if(distance < this.r)
+    if(distance < this.r && mouseIsPressed)
     {
       isOverCircle = true;
+      //patch_chord.push(new Patcher(this.ex,this.ey,maxobject2.ex,maxobject2.y));
     } else {
       isOverCircle = false;
+
     }
 
-    // draw a circle
+    // output patchpoint
     ellipseMode(CENTER);
     stroke(0);
     strokeWeight(0);
@@ -109,7 +129,7 @@ class MaxObj {
       cursor(HAND);
     } else {
       fill(200);
-      cursor(ARROW);
+      cursor(HAND);
     }
     ellipse(this.ex, this.ey, this.r, this.r);
 
@@ -119,8 +139,10 @@ class MaxObj {
     if(distance < this.r)
     {
       isOverCircle = true;
+    //  patch_chord.push(new Patcher(this.ex,this.ey,maxobject2.ex,maxobject2.y));
     } else {
       isOverCircle = false;
+
     }
 
     // draw a circle
@@ -139,5 +161,23 @@ class MaxObj {
     }
     ellipse(this.ex, this.y, this.r, this.r);
 
+  }
+}
+
+class Patcher {
+  constructor(x1,y1,x2,y2) {
+    this.x1 = x1;
+    this.y1 = y1;
+    this.x2 = x2;
+    this.y2 = y2;
+  }
+
+  show() {
+    stroke(88)
+    strokeWeight(8);
+    line(this.x1,this.y1,this.x2,this.y2)
+    stroke(150)
+    strokeWeight(6);
+    line(this.x1,this.y1,this.x2,this.y2)
   }
 }
