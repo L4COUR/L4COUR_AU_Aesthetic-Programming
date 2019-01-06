@@ -6,7 +6,8 @@
 //variables for the MaxObj
 let maxobject1;
 let maxobject2;
-var isOverCircle;
+var isOverOutput;
+var isOverInput;
 var overObj = false;
 var locked = false;
 
@@ -18,20 +19,25 @@ var dragY;
 var moveX;
 var moveY;
 
+var x1;
+var y1;
+var x2;
+var y2;
+
 function setup() {
   background(180);
   createCanvas(windowWidth,windowHeight);
-  maxobject1 = new MaxObj("Home~",200,150,180,50,15);
-  maxobject2 = new MaxObj("Works",250,350,200,50,15);
+  maxobject1 = new MaxObj("Home~",200,150,180,50,15,15);
+  maxobject2 = new MaxObj("Works",250,350,200,50,15,15);
 }
 
 function mousePressed() {
-  maxobject1.io();
-  maxobject2.io();
+  //maxobject1.io();
+  //maxobject2.io();
 
-  if (isOverCircle = true && overObj) {
-    patch_chord.push(new Patcher(maxobject1.ex,maxobject1.ey,mouseX,mouseY));
-  }
+  //if (isOverOutput = true) {
+    patch_chord.push(new Patcher(x1,y1,x2,y2));
+  //}
 
 
   //if (overObj == true){
@@ -58,7 +64,7 @@ function draw() {
 
 
 class MaxObj {
-  constructor(name,x,y,w,h,r) {
+  constructor(name,x,y,w,h,udr,indr) {
     this.name = name
     this.x = x;
     this.y = y;
@@ -66,30 +72,31 @@ class MaxObj {
     this.h = h;
     this.ex = x +20;
     this.ey = y +50;
-    this.r = r;
+    this.udr = udr;
+    this.indr = indr;
 
     this.strokeW = 0;
   }
 
-  io() { //this code is able to identify the mouse position within the MaxObj
-    if (mouseX > this.x && mouseX < this.x + this.w + this.r &&
-     mouseY > this.y && mouseY < this.y + this.h) {
-        overObj = true;
-      if(!locked) {
-        console.log("In", this.name);
-        set(this.ex,this.ey);
-        stroke(255);
-        strokeWeight(this.strokeW+5);
+  //io() { //this code is able to identify the mouse position within the MaxObj
+  //  if (mouseX > this.x && mouseX < this.x + this.w + this.r &&
+  //   mouseY > this.y && mouseY < this.y + this.h) {
+  //      overObj = true;
+  //    if(!locked) {
+        //console.log("In", this.name);
+        //set(this.ex,this.ey);
+  //      stroke(255);
+  //      strokeWeight(this.strokeW+5);
 
-      }
-    } else {
-      stroke(156,39,176);
-      strokeWeight(this.strokeW);
-      console.log("Out", this.name);
-      set(mouseX,mouseY);
-      overObj = false;
-    }
-  }
+  //    }
+  //  } else {
+  //    stroke(156,39,176);
+  //    strokeWeight(this.strokeW);
+      //console.log("Out", this.name);
+      //set(mouseX,mouseY);
+  //    overObj = false;
+  //  }
+  //}
 
   show() {
     //MaxObj - box template
@@ -106,14 +113,17 @@ class MaxObj {
       text(this.name, this.x+8, this.y+32);
 
     // Object output
-    var distance = dist(mouseX, mouseY, this.ex, this.ey);
+    var distance1 = dist(mouseX, mouseY, this.ex, this.ey);
     // if the distance is less than the circle's radius
-    if(distance < this.r && mouseIsPressed)
+    if(distance1 < this.udr && mousePressed)
     {
-      isOverCircle = true;
+      isOverOutput = true;
+      console.log("Output", this.name);
+      set(x1 = this.ex,y1 = this.ey);
       //patch_chord.push(new Patcher(this.ex,this.ey,maxobject2.ex,maxobject2.y));
     } else {
-      isOverCircle = false;
+      isOverOutput = false;
+      //console.log("out", this.name);
 
     }
 
@@ -121,7 +131,7 @@ class MaxObj {
     ellipseMode(CENTER);
     stroke(0);
     strokeWeight(0);
-    if(isOverCircle == true)
+    if(isOverOutput == true)
     {
       fill(100);
       stroke("#D1D66E");
@@ -131,25 +141,27 @@ class MaxObj {
       fill(200);
       cursor(HAND);
     }
-    ellipse(this.ex, this.ey, this.r, this.r);
+    ellipse(this.ex, this.ey, this.udr, this.udr);
 
     // Object input
-    var distance = dist(mouseX, mouseY, this.ex, this.y);
+    var distance2 = dist(mouseX, mouseY, this.ex, this.y);
     // if the distance is less than the circle's radius
-    if(distance < this.r)
+    if(distance2 < this.indr && mouseIsPressed)
     {
-      isOverCircle = true;
+      isOverInput = true;
+      console.log("Input", this.name);
+      set(x2 = this.ex, y2 = this.y);
     //  patch_chord.push(new Patcher(this.ex,this.ey,maxobject2.ex,maxobject2.y));
     } else {
-      isOverCircle = false;
+      isOverInput = false;
 
     }
 
-    // draw a circle
+    // Input patchpoint
     ellipseMode(CENTER);
     stroke(0);
     strokeWeight(0);
-    if(isOverCircle == true)
+    if(isOverInput == true)
     {
       fill(100);
       stroke("#E0ACA1");
@@ -159,7 +171,7 @@ class MaxObj {
       fill(200);
       cursor(ARROW);
     }
-    ellipse(this.ex, this.y, this.r, this.r);
+    ellipse(this.ex, this.y, this.indr, this.indr);
 
   }
 }
