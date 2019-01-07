@@ -11,6 +11,7 @@ var maxobject = [1,2];
 
 var isOverOutput;
 var isOverInput;
+var reset = false;
 var overObj = false;
 var locked = false;
 
@@ -22,8 +23,8 @@ var dragY;
 var moveX;
 var moveY;
 
-var x1 = maxobject[1].ex;
-var y1 = maxobject[1].ey;
+var x1;
+var y1;
 var x2;
 var y2;
 
@@ -48,6 +49,8 @@ function mousePressed() {
   //}
   //console.log(mouseX,mouseY);
 //patch_chord[i].move();
+noCursor();
+
 }
 
 function draw() {
@@ -70,13 +73,18 @@ function draw() {
 //   }
    //patch_chord[i].move();
   }
-  stroke(88)
+  if (x1 > 0) {
+  stroke(88,115)
   strokeWeight(8);
-  line(x1,y1,x2,y2)
-  stroke(150)
+  line(x1,y1,mouseX,mouseY)
+  stroke(150,115)
   strokeWeight(6);
-  line(x1,y1,x2,y2)
-
+  line(x1,y1,mouseX,mouseY)
+  noCursor();
+  stroke(200)
+  strokeWeight(12)
+  point(mouseX,mouseY);
+  } 
 }
 
 function mouseReleased(move) {
@@ -232,9 +240,10 @@ class Patcher {
 
   move() {
     if (this.x1 == this.x2) {
+      reset = true;
       noStroke();
       console.log("RESET");
-      this.x1 = undefined;
+      this.x1 = 0;
       this.x2 = undefined;
       this.y1 = undefined;
       this.y2 = undefined;
