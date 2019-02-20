@@ -14,8 +14,10 @@ point(600,200);
 
 point(500,300);
 
+if (true) {
+  line(x1,y1,x2,y2);
+}
 
-line(x1,y1,x2,y2);
 }
 
 function mousePressed() {
