@@ -10,7 +10,7 @@ My code is concerned with the relation between 3D-Cones and the FFT-values comin
 alt="Youtube video"/></a>
 </br>
 </br>
-Press the [RawGit](https://cdn.rawgit.com/Pacour/Aesthetic_Programming_2018/38f3ec68/Mini_Ex1/empty-example/index.html) to run my code.
+Press the [RawGit](https://rawcdn.githack.com/Pacour/Aesthetic_Programming_2018/38f3ec68/Mini_Ex1/empty-example/index.html) to run my code.
 </br>
 I have had some trouble figuring out how RawGit works, so in the event that it doesnt work, i suggest clicking the .gif, which is a Youtube link.
 </br>
