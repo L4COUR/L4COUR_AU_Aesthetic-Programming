@@ -10,7 +10,7 @@ This mini_ex7 was really one of the harder ones in my opinion. I really enjoyed 
 
 ![alt text](https://github.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/blob/master/Mini_Ex7/Screen%20Shot%202018-04-02%20at%2020.33.53.png "AudioGEN.js")
 </br>
-Before pressing [RawGit](https://cdn.rawgit.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/4ac32962/Mini_Ex7/Source/index_mini_ex7.html) I would once again strongly advice to use a set of headphones for a better experience of the audio.
+Before pressing [RawGit](https://rawcdn.githack.com/L4COUR/Aesthetic_Programming_Mini_Ex-s/4ac32962/Mini_Ex7/Source/index_mini_ex7.html) I would once again strongly advice to use a set of headphones for a better experience of the audio.
 If the RAWGIT doesnt work due to problems loading the fonts then I have made a video where you can experience the running code. https://www.youtube.com/watch?v=DNHUZUXL3N4&feature=youtu.be
 </br>
 
